@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'sinatra/reloder'
+require 'sinatra/reloader'
 require './models'
 require 'bundler/setup'
 require 'rack-flash'
