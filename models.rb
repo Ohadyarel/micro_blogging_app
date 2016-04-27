@@ -13,3 +13,9 @@ end
 class Like < ActiveRecord::Base
 
 end
+
+#=========================================
+
+class Follow < ActiveRecord::Base
+
+end
