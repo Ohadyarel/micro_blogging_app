@@ -4,3 +4,6 @@ end
 
 #=========================================
 
+class Post < ActiveRecord::Base
+
+end
