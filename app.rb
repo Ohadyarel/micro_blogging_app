@@ -30,7 +30,7 @@ post '/sign-up' do
 		if params[:login][:password] == params[:repassword]
 			@user = User.create(params[:login])
 			session[:user_id] = @user.id
-			redirect '/profile/:id' ## TODO
+			redirect '/profile/:username' ## TODO
 		else
 			flash[:alert] = "Password does not match."
 			redirect back
@@ -39,4 +39,15 @@ post '/sign-up' do
 		flash[:alert] = "Please read and agree to the terms and conditions."
 		redirect back
 	end
+end
+
+post '/log-in' do
+	@user = User.where(username: params[:username]).first
+	if @user && @user.password == params[:password]
+		session[:user_id] = @user.id
+		redirect '/profile/:username'
+	else     
+		flash[:alert] = "Your username or password is incorrect, please try again."   
+		redirect "/" 
+	end   
 end
