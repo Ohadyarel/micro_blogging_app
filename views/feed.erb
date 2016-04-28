@@ -6,7 +6,7 @@
 </div>
 
 <div id="feed">
-    <% @posts.each do |post| %>
+    <% @posts.reverse.each do |post| %>
         <div class="feed_post">
             <% @creator = User.where(id: post[:user_id]).first %>
             <p class="post_creator">
@@ -14,6 +14,10 @@
             </p>
             <p class="post_body">
                 <%= post[:body] %>
+            </p>
+            <p>
+            <!-- still need to figure out how to show the time -->
+            	<%= post[:time] %> 
             </p>
         </div>
     <% end %>
