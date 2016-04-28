@@ -6,6 +6,18 @@
 	<script src="/js/main.js"></script>
 </head>
 <body>
+	<div id="log_header">
+		<% if session[:user_id] %>
+			<a href="/log-out">
+				Log out
+			</a>
+		<% else %>
+			<p id="log_in_button">
+				Log in
+			</p>
+		<% end %>
+	</div>
+		
 	<%= yield %>
 </body>
 </html>

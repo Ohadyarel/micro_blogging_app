@@ -66,3 +66,7 @@ get '/feed' do
 	erb :feed
 end 
 
+get '/log-out' do
+	session.clear
+	redirect '/'
+end
