@@ -66,12 +66,12 @@ get '/feed' do
 	erb :feed
 end 
 
-<<<<<<< HEAD
+
 get '/log-out' do
 	session.clear
 	redirect '/'
 end
-=======
+
 get '/profile/:username' do
 	current_user
 	@profile_user = User.where(username: params[:username]).first
@@ -79,4 +79,4 @@ get '/profile/:username' do
 	erb :profile
 end
 
->>>>>>> 2879f881db72ad7345cac9442a0c72a9d543a618
+
