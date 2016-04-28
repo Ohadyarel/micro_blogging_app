@@ -4,7 +4,7 @@ ruby '2.2.1'
 gem 'sinatra-activerecord'
 gem 'sinatra-reloader'
 gem 'rake'
-gem 'rack-flash3'
+# gem 'rack-flash3'
 
 group :development do         
 	gem 'sqlite3'   

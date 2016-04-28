@@ -2,13 +2,13 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
 require './models'
-require 'bundler/setup'
-require 'rack-flash'
+# require 'bundler/setup'
+# require 'rack-flash'
 
-enable :sessions
-use Rack::Flash, :sweep => true
+# enable :sessions
+# use Rack::Flash, :sweep => true
 
-configure(:development){set :database, "sqlite3:rettiwt.sqlite3"}
+configure(:development){set :database, 'sqlite3:rettiwt.sqlite3'}
 set :sessions, true 
 
 def current_user
