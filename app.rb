@@ -80,3 +80,48 @@ get '/profile/:username' do
 end
 
 
+get '/profile_edit/:username' do
+	current_user
+	erb :profile_edit
+end
+
+post '/edit-fname' do 
+	current_user
+	if params[:fname] != ""
+		User.update(@current_user[:id], fname: params[:fname])
+		flash[:notice] = "Your first name has been updated."
+		redirect "/profile_edit/#{@current_user[:username]}"
+	else
+		flash[:alert] = "Please enter a valid first name."
+		redirect "/profile_edit/#{@current_user[:username]}"
+	end
+end
+
+post '/edit-lname' do 
+	current_user
+	if params[:lname] != ""
+		User.update(@current_user[:id], lname: params[:lname])
+		flash[:notice] = "Your last name has been updated."
+		redirect "/profile_edit/#{@current_user[:username]}"
+	else
+		flash[:alert] = "Please enter a valid last name."
+		redirect "/profile_edit/#{@current_user[:username]}"
+	end
+end
+
+post '/edit-password' do 
+	current_user
+	if params[:new_password] != ""  && params[:new_repassword] != "" && params[:old_password] != ""
+		if params[:old_password] == @current_user[:password] && params[:new_repassword] == params[:new_password]
+			User.update(@current_user[:id], password: params[:new_password])
+			flash[:notice] = "Your password has been updated."
+			redirect "/profile_edit/#{@current_user[:username]}"
+		else
+			flash[:alert] = "The info you enterd is incorrect."
+			redirect "/profile_edit/#{@current_user[:username]}"
+		end
+	else 
+		flash[:alert] = "Please fill in all password fields."
+		redirect "/profile_edit/#{@current_user[:username]}"
+	end
+end

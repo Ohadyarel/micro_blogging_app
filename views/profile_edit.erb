@@ -1,0 +1,31 @@
+<div id="edit_profile">
+	<h1>Edit Profile</h1>
+	<form method="POST" action="/edit-fname">
+		<input type="text" name="fname" placeholder=<%= @current_user.fname %> ></input>
+		<input type="submit" value="Change First Name"></input>
+	</form>
+
+	<form method="POST" action="/edit-lname">
+		<input type="text" name="lname" placeholder=<%= @current_user.lname %> ></input>
+		<input type="submit" value="Change Last Name"></input>
+	</form>
+
+	<form method="POST" action="/edit-password">
+		<input type="password" name="new_password" placeholder="Type in your new password"></input>
+		<input type="password" name="new_repassword" placeholder="Retype your new password"></input>
+		<input type="password" name="old_password" placeholder="Type in your old password"></input>
+		<input type="submit" value="Change Password"></input>
+	</form>
+
+	<% if flash[:notice] %>
+		<div class="flash_notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+
+	<% if flash[:alert] %>
+		<div class="flash_alert">
+			<%= flash[:alert] %>
+		</div>
+	<% end %>
+</div>
