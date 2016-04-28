@@ -28,4 +28,15 @@
 			<%= flash[:alert] %>
 		</div>
 	<% end %>
+
+</div>
+<div class="shadow"></div>
+<div id="delete_modal">
+	<p>Are you flippin' sure?</p>
+	<form method="POST" action="/account-delete">
+		<input type="submit" value="DELETE ACCOUNT"></input>
+		
+	</form>
+	<!-- add event to this div that will close modal-->
+	<div id="delete_cancel">Cancel</div> 
 </div>

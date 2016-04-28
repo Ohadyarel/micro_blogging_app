@@ -125,3 +125,15 @@ post '/edit-password' do
 		redirect "/profile_edit/#{@current_user[:username]}"
 	end
 end
+
+post '/account-delete' do
+	current_user
+	Post.where(user_id: current_user[:id]).each do |post|
+		post.delete
+	end
+	# Follow.where(follower_id: current_user[:id]).delete
+	# Follow.where(followed_id: current_user[:id]).delete
+	User.find(@current_user[:id]).delete
+	session.clear
+	redirect '/'
+end
