@@ -1,0 +1,50 @@
+<div id="profile">
+	
+	<div id="profile_header">
+		<!-- where the follow button will be -->
+		<!-- where the edit profile button will be if current user -->
+	</div>
+
+	<div id="profile_title">
+		<img class="profile_pic" src="">
+		<h1>
+			<%= @profile_user[:username] %>
+		</h1>
+		<p>
+			<%= "#{@profile_user[:fname]} #{@profile_user[:lname]}" %>
+		</p>
+	</div>
+
+	<div id="profile_main">
+		<div id="profile_main_nav">
+			<ul>
+				<li>Posts</li>
+				<li>Following</li>
+				<li>Followers</li>
+			</ul>
+		</div>
+		<div id="profile_posts">
+			<% @profile_user_posts.reverse.each do |post| %>
+        <div class="profile_post">
+            <p class="profile_post_creator">
+                <%= @profile_user[:username] %>
+            </p>
+            <p class="post_body">
+                <%= post[:body] %>
+            </p>
+            <p>
+            <!-- still need to figure out how to show the time -->
+            	<%= post[:time] %> 
+            </p>
+        </div>
+    <% end %>
+		</div>
+		<div id="profile_following">
+			<!-- this is where the list of following will show -->
+		</div>
+		<div id="profile_followers">
+			<!-- this is where the list of followers will show -->
+		</div>
+	</div>
+
+</div>

@@ -49,7 +49,7 @@ post '/log-in' do
 	@user = User.where(username: params[:username]).first
 	if @user && @user.password == params[:password]
 		session[:user_id] = @user.id
-		redirect '/profile/:username'
+		redirect "/profile/#{@user[:username]}"
 	else     
 		flash[:alert] = "Your username or password is incorrect, please try again."   
 		redirect "/" 
@@ -66,7 +66,17 @@ get '/feed' do
 	erb :feed
 end 
 
+<<<<<<< HEAD
 get '/log-out' do
 	session.clear
 	redirect '/'
 end
+=======
+get '/profile/:username' do
+	current_user
+	@profile_user = User.where(username: params[:username]).first
+	@profile_user_posts = Post.where(user_id: @profile_user[:id])
+	erb :profile
+end
+
+>>>>>>> 2879f881db72ad7345cac9442a0c72a9d543a618
