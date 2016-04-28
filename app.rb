@@ -55,3 +55,14 @@ post '/log-in' do
 		redirect "/" 
 	end   
 end
+
+post '/post/create' do
+	post = Post.create(params[:post])
+	redirect "/feed"
+end
+
+get '/feed' do
+	@posts = Post.all.slice(Post.all.length - 10, 10)
+	erb :feed
+end 
+

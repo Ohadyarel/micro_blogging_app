@@ -1,0 +1,20 @@
+<div id="create_post_form">
+	<form method="POST" action="/post/create">
+		<textarea name="[post]body"></textarea>
+		<input type="hidden" value=<%= current_user.id %> name="[post]user_id">
+		<input type="submit" value="Flip it">
+</div>
+
+<div id="feed">
+    <% @posts.each do |post| %>
+        <div class="feed_post">
+            <% @creator = User.where(id: post[:user_id]).first %>
+            <p class="post_creator">
+                <%= @creator[:username] %>
+            </p>
+            <p class="post_body">
+                <%= post[:body] %>
+            </p>
+        </div>
+    <% end %>
+</div>
