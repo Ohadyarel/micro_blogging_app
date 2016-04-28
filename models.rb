@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	has_many :posts, through: :likes
 	has_many :follows
 	has_many :followers, through: :follows
-	has_many :followeds, 
+	has_many :followeds, through: :follows
 end
 
 #=========================================
