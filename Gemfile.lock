@@ -24,8 +24,6 @@ GEM
     pg (0.18.4)
     pg (0.18.4-x86-mingw32)
     rack (1.6.4)
-    rack-flash3 (1.0.5)
-      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -60,7 +58,6 @@ PLATFORMS
 
 DEPENDENCIES
   pg
-  rack-flash3
   rake
   sinatra-activerecord
   sinatra-reloader
