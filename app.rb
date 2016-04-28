@@ -20,3 +20,23 @@ end
 get '/' do 
 	erb :index
 end
+
+get '/sign_up' do 
+	erb :sign_up
+end
+
+post '/sign-up' do
+	if params[:terms] == "true"
+		if params[:login][:password] == params[:repassword]
+			@user = User.create(params[:login])
+			session[:user_id] = @user.id
+			redirect '/profile/:id' ## TODO
+		else
+			flash[:alert] = "Password does not match."
+			redirect back
+		end
+	else
+		flash[:alert] = "Please read and agree to the terms and conditions."
+		redirect back
+	end
+end
