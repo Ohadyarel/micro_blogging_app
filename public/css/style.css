@@ -3,6 +3,59 @@ body{
 	padding: 0
 }
 
+/*Index styling*/
+#index_title{
+	font-size: 150px;
+	position: fixed;
+	display: block;
+	width: 500px;
+	height: 300px;
+	margin:auto;
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	right: 0;
+}
+
+#index_image{
+	font-size: 150px;
+	position: fixed;
+	display: block;
+	width: 500px;
+	height: 300px;
+	margin:auto;
+	top: 0;
+	bottom: -28px;
+	left: 994px;
+	right: 0;
+	-webkit-animation-name: woot; 
+    -webkit-animation-duration: 4s;
+   transform: rotateX(180deg);
+   color: red;
+}
+
+@-webkit-keyframes woot {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(180deg);}
+}
+#index_signup{
+	background: red;
+	color: white;
+	height: 30px;
+	width: 200px;
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+
+#index_signup p{
+	text-decoration: none;
+	display: block;
+	color: white;
+	margin: 20px;
+}
+
+/*======================*/
+
 /*Styling for the header in the layout.erb*/
 #log_header {
 	width: 100%;
@@ -17,6 +70,8 @@ body{
 
 #log_in_button{
 	float: right;
+	text-decoration: none;
+	color: red;
 	margin: 0px 10px;
 }
 
@@ -34,22 +89,48 @@ body{
 	float: right;
 }
 
-#log_in_header_name p{
+#log_in_header_name a{
+	text-decoration: none;
+	color: black; 
 	margin:0 10px;
 }
 /*===========================================*/
 
 /*Styling for login modal */
+.login_form{
+	position: fixed;
+	background: white;
+	z-index: 100;
+	width: 500px;
+	height: 350px;
+	margin:auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align: center;
+	border: 4px solid red;
+}
 
+.login_form input:focus {
+	box-shadow: 0 0 5px rgba(255, 0, 0, 1);
+	border: 2px solid red;
+}
+
+.login_form input {
+	display: block;
+	width: 400px;
+	height: 20px;
+	margin: 70px auto;
+	font-size: 15px;
+	outline: none;
+}
 /*===============================*/
 
 
 /*styling for sign_up.erb */
 
-.signup_input:focus {
-	box-shadow: 0 0 5px rgba(255, 0, 0, 1);
-	border: 2px solid red;
-}
+
 
 #sign-up {
 	width: 450px;
@@ -64,6 +145,10 @@ body{
 	margin: 0 auto;
 }
 
+.signup_input:focus {
+	box-shadow: 0 0 5px rgba(255, 0, 0, 1);
+	border: 2px solid red;
+}
 .signup_input {
 	display: block;
 	width: 400px;

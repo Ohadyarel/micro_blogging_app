@@ -1,0 +1,12 @@
+<div class="login_form">
+	<form method="POST" action="/log-in"> 
+		<input type="text" name="username" placeholder="Username"></input>
+		<input type="password" name="password" placeholder="Password"></input>
+		<input type="submit" value="Log In!"></input>
+		<% if  flash[:alert] %>
+			<div class="flash alert">
+				<%= flash[:alert] %>
+			</div>
+		<% end %>
+	</form>
+</div>

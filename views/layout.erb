@@ -9,6 +9,7 @@
 	<script src="/js/terms-modal.js"></script>
 	<script src="/js/feed.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="/js/index_animation.js"></script>
 
 </head>
 <body>
@@ -21,33 +22,18 @@
 					Log out
 				</a>
 			<% else %>
-				<p id="log_in_button">
+				<a id="log_in_button" href="/user_login_page">
 					Log in
-				</p>
+				</a>
 			<% end %>
 		</div>
 
 		<% if session[:user_id] %>
 			<div id="log_in_header_name">
-				<p> <%= @current_user.username %> </p>	
+				<a href= <%= "/profile/#{current_user.username}" %>> <%= current_user.username %> </a>	
 			</div>
 		<% end %>
 	</div>
-
-	<div class="modal_login">
-		<form method="POST" action="/log-in"> 
-			<input type="text" name="username" placeholder="Username"></input>
-			<input type="password" name="password" placeholder="Password"></input>
-			<input type="submit" value="Log In!"></input>
-			<% if  flash[:alert] %>
-				<div class="flash alert">
-					<%= flash[:alert] %>
-				</div>
-			<% end %>
-		</form>
-	</div>
-
-	<div class="shadow"></div>
 
 	<%= yield %>
 
