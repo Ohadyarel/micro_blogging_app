@@ -3,6 +3,59 @@ body{
 	padding: 0
 }
 
+/*Index styling*/
+#index_title{
+	font-size: 150px;
+	position: fixed;
+	display: block;
+	width: 500px;
+	height: 300px;
+	margin:auto;
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	right: 0;
+}
+
+#index_image{
+	font-size: 150px;
+	position: fixed;
+	display: block;
+	width: 500px;
+	height: 300px;
+	margin:auto;
+	top: 0;
+	bottom: -28px;
+	left: 994px;
+	right: 0;
+	-webkit-animation-name: woot; 
+    -webkit-animation-duration: 4s;
+   transform: rotateX(180deg);
+   color: red;
+}
+
+@-webkit-keyframes woot {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(180deg);}
+}
+#index_signup{
+	background: red;
+	color: white;
+	height: 30px;
+	width: 200px;
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+
+#index_signup p{
+	text-decoration: none;
+	display: block;
+	color: white;
+	margin: 20px;
+}
+
+/*======================*/
+
 /*Styling for the header in the layout.erb*/
 #log_header {
 	width: 100%;
