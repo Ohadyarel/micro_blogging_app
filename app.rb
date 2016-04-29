@@ -160,3 +160,7 @@ post '/follow' do
 	Follow.create(follower_id: @current_user[:id], followed_id: params[:profile_id])
 	redirect "/profile/#{params[:profile_username]}"
 end
+
+get '/user_login_page'do 
+	erb :login
+end
