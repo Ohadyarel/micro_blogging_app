@@ -1,6 +1,6 @@
 <div id="create_post_form">
 	<form method="POST" action="/post/create">
-		<textarea name="[post]body"></textarea>
+		<textarea name="[post]body" maxlength="150"></textarea>
 		<input type="hidden" value=<%= current_user.id %> name="[post]user_id">
 		<input type="submit" value="Flip it">
 </div>
