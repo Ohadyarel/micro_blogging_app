@@ -1,11 +1,33 @@
-<div id="create_post_form">
-	<form method="POST" action="/post/create">
-		<textarea name="[post]body" maxlength="150"></textarea>
-		<input type="hidden" value=<%= current_user.id %> name="[post]user_id">
-		<input type="submit" value="Flip it">
+<div id="feed">
+    <h1>Feed Me</h1>
+    <div id="create_post_form">
+    	<form method="POST" action="/post/create">
+    		<textarea name="[post]body" maxlength="150" id="post_textbox" placeholder="What's on your flippin' mind?"></textarea>
+    		<input type="hidden" value=<%= current_user.id %> name="[post]user_id">
+            <span id="chars">150</span>
+    		<input type="submit" value="Flip it" id="post_submit_button">
+    </div>
+
+    <h2><i class="fa fa-twitter"></i></h2>
+
+    <div id="active_feed">
+        <% @posts.reverse.each do |post| %>
+            <div class="feed_post">
+                <% @creator = User.where(id: post[:user_id]).first %>
+                <p class="post_body">
+                    <%= post[:body] %>
+                </p>
+                <p class="post_creator">
+                    Posted by: <a href=<%= "/profile/#{@creator[:username]}" %>><%= @creator[:username] %></a>
+                </p>
+                <p class="post_time">
+                	<%= post[:created_at] %> 
+                </p>
+            </div>
+        <% end %>
+    </div>
 </div>
 
-<div id="feed">
     <% @posts.reverse.each do |post| %>
         <div class="feed_post">
             <% @creator = User.where(id: post[:user_id]).first %>
@@ -22,5 +44,6 @@
         </div>
     <% end %>
 </div>
+
 
 
