@@ -2,18 +2,43 @@ body{
 	margin: 0;
 	padding: 0
 }
+
+/*Styling for the header in the layout.erb*/
 #log_header {
 	width: 100%;
 	height: 50px;
 	padding: 10px 0;
+	font-family: 'Lato', sans-serif;
 }
 
 #log_header_option{
 	float: right;
-	width: 40%;
 }
 
 #log_in_button{
 	float: right;
-	margin: 0px 10px
+	margin: 0px 10px;
 }
+
+#log_out_button{
+	float: right;
+	margin: 0px 10px;
+	text-decoration: none;
+	color: red;
+}
+#log_out_button:hover{
+	color: #fc7b25 ;
+}
+
+#log_in_header_name{
+	float: right;
+}
+
+#log_in_header_name p{
+	margin:0 10px;
+}
+/*===========================================*/
+
+/*Styling for login modal */
+
+/*===============================*/
