@@ -137,3 +137,14 @@ post '/account-delete' do
 	session.clear
 	redirect '/'
 end
+
+post '/unfollow' do
+	Follow.find(params[:follow_id]).delete
+	redirect "/profile/#{params[:profile_username]}"
+end
+
+post '/follow' do
+	current_user
+	Follow.create(follower_id: @current_user[:id], followed_id: params[:profile_id])
+	redirect "/profile/#{params[:profile_username]}"
+end

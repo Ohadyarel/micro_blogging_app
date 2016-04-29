@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
 	has_many :follows
 	has_many :followers, through: :follows
 	has_many :followeds, through: :follows
+
+	def followed_by(user)
+		self.follows.include?(user)
+	end
 end
 
 #=========================================
@@ -25,8 +29,8 @@ end
 #=========================================
 
 class Follow < ActiveRecord::Base
-	#Still need to figure this part out
-
+	belongs_to :follower, class_name: "User"
+	belongs_to :followed, class_name: "User"
 end
 
 

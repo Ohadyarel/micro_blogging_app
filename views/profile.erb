@@ -15,6 +15,32 @@
 		</p>
 	</div>
 
+	<% if @current_user[:id] == @profile_user[:id] %>
+		<div id="edit_profile_button">
+			
+		</div>
+	<% else %>
+		<% if Follow.where(follower_id: @current_user[:id], followed_id: @profile_user[:id]).first %>			
+<!--<%# if !@profile_user.followed_by(@current_user) %> -->
+ 			<% @current_follow = Follow.where(follower_id: @current_user[:id], followed_id: @profile_user[:id]).first %>
+			<div id="unfollow_button">
+				<form method="POST" action="/unfollow">
+					<input type="hidden" name="profile_username" value=<%= @profile_user.username %>>
+					<input type="hidden" name="follow_id" value=<%= @current_follow.id %>>
+					<input type="submit" value="Unfollow <%=@profile_user[:username] %>"></input>
+				</form>
+			</div>
+		<% else %>
+			<div id="follow_button">
+				<form method="POST" action="/follow">
+					<input type="hidden" name="profile_id" value=<%= @profile_user.id %>>
+					<input type="hidden" name="profile_username" value=<%= @profile_user.username %>>
+					<input type="submit" value="Follow <%=@profile_user[:username] %>"></input>
+				</form>
+			</div>
+
+		<% end %>
+	<% end %>
 	<div id="profile_main">
 		<div id="profile_main_nav">
 			<ul>
