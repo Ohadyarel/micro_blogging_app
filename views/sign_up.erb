@@ -1,14 +1,25 @@
-<form method="POST" action="/sign-up"> 
-	<input type="text" name="[login]fname" placeholder="First Name"></input>
-	<input type="text" name="[login]lname" placeholder="Last Name"></input>
-	<input type="text" name="[login]username" placeholder="Username"></input>
-	<input type="password" name="[login]password" placeholder="Create Password"></input>
-	<input type="password" name="repassword" placeholder="Validate Password"></input>
-	<input type="checkbox" name="terms" value="true">I have read and agree to the <a href="#">terms and conditions</a></input>
-	<input type="submit" value="Sign Up!"></input>
-	<% if  flash[:alert] %>
-		<div class="flash_alert">
-			<%= flash[:alert] %>
-		</div>
-	<% end %>
-</form>
+<div id="sign-up">
+	<h1>Sign up</h1>
+	<form method="POST" action="/sign-up"> 
+		<input class="signup_input" type="text" name="[login]fname" placeholder="First Name"></input>
+		<input class="signup_input" type="text" name="[login]lname" placeholder="Last Name"></input>
+		<input class="signup_input" type="text" name="[login]username" placeholder="Username"></input>
+		<input class="signup_input" type="password" name="[login]password" placeholder="Create Password"></input>
+		<input class="signup_input" type="password" name="repassword" placeholder="Retype password"></input>
+		<input type="checkbox" id="terms-checkbox" name="terms" value="true">I have read and agree to the <a href="#" id="terms_click">terms and conditions</a></input>
+		<input type="submit" value="Sign Up!" id="signup-button"></input>
+		<% if  flash[:alert] %>
+			<div class="flash_alert">
+				<%= flash[:alert] %>
+			</div>
+		<% end %>
+	</form>
+</div>
+
+<div class="shadow"></div>
+
+<div id="terms_modal">
+	<h1>Terms and conditions</h1>
+	<p>We own you.</p>
+	<a href="#" id="close_terms">back</a>
+</div>
