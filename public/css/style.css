@@ -116,3 +116,107 @@ body{
 }
 
 /*===========================*/
+
+
+/*styling for the feed.erb*/
+
+
+/*add new post*/
+
+#feed {
+	width: 500px;
+	margin: 20px auto;
+}
+
+#feed h1 {
+	color: red;
+	text-align: center;
+}
+
+#create_post_form {
+	text-align: right;
+}
+
+#post_textbox {
+	width: 500px;
+	height: 50px;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+	border: 2px solid red;
+	font-size: 20px;
+	text-indent: 5px;
+}
+
+#post_textbox:focus {
+	box-shadow: 0 0 5px rgba(255, 0, 0, 1);
+	border: 2px solid red;
+}
+
+#chars {
+	font-size: .8em;
+}
+
+#post_submit_button {
+	font-size: 20px;
+	margin-right: 0;
+	color: red;
+}
+
+/*middle dots*/
+
+#feed h2 {
+	text-align: center;
+	color: red;
+	font-size: 2em;
+	margin: 0;
+}
+
+#feed i {
+	transform: rotateX(180deg);
+}
+
+/*posts feed*/
+
+#active_feed {
+	width: 520px;
+	height: 500px;
+	margin: 0;
+	overflow: scroll;
+}
+
+.feed_post {
+	border: 2px solid red;
+	width: 500px;
+	margin: 20px 0;
+	padding: 2px;
+}
+
+.post_body {
+	margin: 5px;
+	font-size: 1.5em;
+}
+
+.post_creator {
+	margin: 5px;
+	display: inline-block;
+}
+
+.post_creator a {
+	text-decoration: none;
+	color: red;
+}
+
+.post_creator a:hover {
+	color: #fc7b25;
+}
+
+.post_time {
+	margin: 10px;
+	display: inline-block;
+	float: right;
+	font-size: .8em;
+}
+
+
+
