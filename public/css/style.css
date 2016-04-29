@@ -1,0 +1,19 @@
+body{
+	margin: 0;
+	padding: 0
+}
+#log_header {
+	width: 100%;
+	height: 50px;
+	padding: 10px 0;
+}
+
+#log_header_option{
+	float: right;
+	width: 40%;
+}
+
+#log_in_button{
+	float: right;
+	margin: 0px 10px
+}
