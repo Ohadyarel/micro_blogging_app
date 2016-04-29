@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="/js/terms-modal.js"></script>
@@ -16,7 +17,7 @@
 
 		<div id="log_header_option">
 			<% if session[:user_id] %>
-				<a href="/log-out">
+				<a id="log_out_button" 	href="/log-out">
 					Log out
 				</a>
 			<% else %>
@@ -25,9 +26,29 @@
 				</p>
 			<% end %>
 		</div>
-		
+
+		<% if session[:user_id] %>
+			<div id="log_in_header_name">
+				<p> <%= @current_user.username %> </p>	
+			</div>
+		<% end %>
 	</div>
-		
+
+	<div class="modal_login">
+		<form method="POST" action="/log-in"> 
+			<input type="text" name="username" placeholder="Username"></input>
+			<input type="password" name="password" placeholder="Password"></input>
+			<input type="submit" value="Log In!"></input>
+			<% if  flash[:alert] %>
+				<div class="flash alert">
+					<%= flash[:alert] %>
+				</div>
+			<% end %>
+		</form>
+	</div>
+
+	<div class="shadow"></div>
+
 	<%= yield %>
 
 </body>
