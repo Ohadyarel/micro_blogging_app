@@ -244,3 +244,85 @@ body{
 	font-size: .8em;
 }
 
+
+/*==========================================*/
+
+/*Profile page*/
+
+#profile {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#profile_title {
+	text-align: center;
+}
+
+#profile_title h1 {
+	font-size: 8em;
+	color: red;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+#profile_title p {
+	margin-top: 0;
+	font-size: 2em;
+}
+
+#edit_profile_button {
+	background-color: red;
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+#edit_profile_button a {
+	text-decoration: none;
+	color: white;
+}
+
+/*profile page nav bar*/
+
+#profile_main_nav {
+	text-align: center;
+	border-bottom: 2px solid red;
+}
+
+#profile_main_nav ul {
+	padding: 0;
+	margin: 50px 0 0 0;
+}
+
+#profile_main_nav ul li{
+	list-style: none;
+	display: inline-block;
+	border: 2px solid red;
+	border-bottom: none;
+	margin: 0 40px;
+	font-size: 1.3em;
+	padding: 5px 10px;
+}
+
+.active_profile_tab {
+	background-color: red;
+	color: white;
+}
+
+/*profile list of posts*/
+
+#profile_posts {
+	overflow: scroll;
+	height: 500px;
+}
+
+.profile_post {
+	width: 550px;
+	margin: 20px auto;
+	border: 2px solid red;
+	padding: 2px;
+}
+
+
