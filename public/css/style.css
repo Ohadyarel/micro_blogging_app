@@ -559,7 +559,7 @@ body{
 	display: none;
 	position: fixed;
 	width: 400px;
-	height: 150px;
+	height: 170px;
 	z-index: 500;
 	top: 0;
 	bottom: 0;
@@ -612,5 +612,6 @@ body{
 	height: 30px;
 	background: red;
 	color: white;
+	margin-bottom: 60px;
 }
 /*==============================*/
