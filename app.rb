@@ -142,8 +142,12 @@ post '/account-delete' do
 	Post.where(user_id: current_user[:id]).each do |post|
 		post.delete
 	end
-	Follow.where(follower_id: current_user[:id]).delete
-	Follow.where(followed_id: current_user[:id]).delete
+	Follow.where(follower_id: current_user[:id]).each do |follower|
+		follower.delete
+	end
+	Follow.where(followed_id: current_user[:id]).each do |followed|
+		followed.delete
+	end
 	User.find(@current_user[:id]).delete
 	session.clear
 	redirect '/'
