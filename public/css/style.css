@@ -386,19 +386,65 @@ body{
 	color: white;
 }
 
+/*profile page follow/unfollow button*/
+
+#follow_button {
+	text-align: center;
+}
+
+#unfollow_button {
+	text-align: center;
+}
+
+#unfollow_input_button {
+	color: red;
+	background-color: white;
+	border-radius: 0;
+	border: 2px solid red;
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+#unfollow_input_button:focus {
+	outline: none;
+}
+
+#unfollow_input_button:hover {
+	color: #fc7b25;
+	border-color: #fc7b25;
+}
+
+#follow_input_button {
+	color: white;
+	background-color: red;
+	border-radius: 0;
+	border: 2px solid red;
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+#follow_input_button:focus {
+	outline: none;
+}
+
+#follow_input_button:hover {
+	background-color: #fc7b25;
+	border-color: #fc7b25
+}
+
 /*profile page nav bar*/
 
-#profile_main_nav {
+.profile_main_nav {
 	text-align: center;
 	border-bottom: 2px solid red;
 }
 
-#profile_main_nav ul {
+.profile_main_nav ul {
 	padding: 0;
 	margin: 50px 0 0 0;
 }
 
-#profile_main_nav ul li{
+.profile_main_nav ul li{
 	list-style: none;
 	display: inline-block;
 	border: 2px solid red;
@@ -415,7 +461,7 @@ body{
 
 /*profile list of posts*/
 
-#profile_posts {
+.profile_posts {
 	overflow: scroll;
 	height: 500px;
 }
@@ -426,5 +472,51 @@ body{
 	border: 2px solid red;
 	padding: 2px;
 }
+
+/*profile lists of follows */
+
+.profile_following {
+	width: 450px;
+	font-size: 2em;
+	height: 500px;
+	overflow: scroll;
+	margin: 10px auto;
+	display: none;
+}
+
+#following_bird {
+	color: red;
+	transform: rotateX(180deg);
+}
+
+.people_user_follows {
+	margin: 10px 0;
+}
+
+.people_user_follows a {
+	text-decoration: none;
+	color: black;
+}
+
+.people_user_follows a:hover {
+	color: red; 
+}
+
+.profile_followers {
+	width: 450px;
+	font-size: 2em;
+	height: 500px;
+	overflow: scroll;
+	margin: 10px auto;
+	display: none;
+}
+
+#follower_bird {
+	color: red;
+	transform: rotateX(180deg);
+}
+
+
+
 
 

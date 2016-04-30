@@ -58,8 +58,8 @@ post '/log-in' do
 		session[:user_id] = @user.id
 		redirect "/profile/#{@user[:username]}"
 	else     
-		flash[:alert] = "Your username or password is incorrect, please try again."   
-		redirect "/" 
+		flash[:alert] = "Your username or password is incorrect, please try again." 
+		redirect back 
 	end   
 end
 
@@ -142,8 +142,8 @@ post '/account-delete' do
 	Post.where(user_id: current_user[:id]).each do |post|
 		post.delete
 	end
-	# Follow.where(follower_id: current_user[:id]).delete
-	# Follow.where(followed_id: current_user[:id]).delete
+	Follow.where(follower_id: current_user[:id]).delete
+	Follow.where(followed_id: current_user[:id]).delete
 	User.find(@current_user[:id]).delete
 	session.clear
 	redirect '/'
