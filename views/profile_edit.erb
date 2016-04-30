@@ -30,13 +30,19 @@
 	<% end %>
 
 </div>
+
+<button id="delete_account_button" >DELETE ACCOUNT</button>
+
 <div class="shadow"></div>
+
 <div id="delete_modal">
 	<p>Are you flippin' sure?</p>
 	<form method="POST" action="/account-delete">
-		<input type="submit" value="DELETE ACCOUNT"></input>
-		
+		<input type="submit" value="DELETE ACCOUNT"></input>	
 	</form>
+
 	<!-- add event to this div that will close modal-->
-	<div id="delete_cancel">Cancel</div> 
+	<a id="delete_cancel" href="#">
+		Cancel
+	</a>
 </div>
