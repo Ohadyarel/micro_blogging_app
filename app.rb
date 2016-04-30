@@ -33,12 +33,13 @@ end
 post '/sign-up' do
 	if params[:terms] == "true"
 		if params[:login][:password] == params[:repassword]
-			if Users.where(username: params[:login][:username]).first == nil
+			if User.where(username: params[:login][:username]).first == nil
 				@user = User.create(params[:login])
 				session[:user_id] = @user.id
-				redirect '/profile/:username' ## TODO
+				redirect "/feed"
 			else
 				flash[:alert] = "Username already exist. Please choose a different Username."
+				redirect back
 		  end
 		else
 			flash[:alert] = "Password does not match."
