@@ -72,8 +72,12 @@
 							</div>
 						<% end %>
 					<% else %>
-						<h3>You are not following anyone.</h3>
-						<h6>Boss move.</h6>
+						<% if @current_user[:id] == @profile_user[:id] %>
+							<h3>You are not following anyone.</h3>
+							<h6>Boss move.</h6>
+						<% else %>
+							<h3><%= @profile_user[:username]%> is not following anyone.</h3>
+						<% end %>
 					<% end %>
 			</div>
 		</div>
@@ -90,7 +94,11 @@
 							</div>
 						<% end %>
 					<% else %>
-						<h3>You have no flippin' followers.</h3>
+						<% if @current_user[:id] == @profile_user[:id] %>
+							<h3>You have no flippin' followers.</h3>
+						<% else %>
+							<h3><%= @profile_user[:username]%> has no followers.</h3>
+						<% end %>
 					<% end %>
 			</div>
 		</div>
