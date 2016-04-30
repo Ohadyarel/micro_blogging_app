@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 	$("#nav_following").click(function(){
 		if (isActive("#nav_following") == false) {
-			navBar('#nav_following','.profile_following','#nav-posts','.profile_posts','#nav_followers','.profile_followers')
+			navBar('#nav_following','.profile_following','#nav_posts','.profile_posts','#nav_followers','.profile_followers')
 		}
 	})
 
