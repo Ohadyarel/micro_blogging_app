@@ -87,7 +87,19 @@ body{
 	color: red;
 }
 #log_out_button:hover{
-	color: #fc7b25 ;
+	color: #fc7b25;
+}
+
+#feed_link_header {
+	text-decoration: none;
+	color: red;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	padding: 0 13px;
+}
+
+#feed_link_header:hover {
+	color: #fc7b25;
 }
 
 #log_in_header_name{
