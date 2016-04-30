@@ -62,26 +62,35 @@
 		<div class="profile_following">
 			<div class="profile_following_user">
 					<% @profile_user_follow = Follow.where(follower_id: @profile_user[:id]) %>
-					<% @profile_user_follow.each do |follow| %>
-						<div class="people_user_follows">
-							<i id="following_bird" class="fa fa-twitter"></i>
-							<a href=<%= "/profile/#{User.where(id: follow[:followed_id]).first.username}" %>>
-								<%= User.where(id: follow[:followed_id]).first.username %>
-							</a>
-						</div>
+					<% if @profile_user_follow != [] %>
+						<% @profile_user_follow.each do |follow| %>
+							<div class="people_user_follows">
+								<i id="following_bird" class="fa fa-twitter"></i>
+								<a href=<%= "/profile/#{User.where(id: follow[:followed_id]).first.username}" %>>
+									<%= User.where(id: follow[:followed_id]).first.username %>
+								</a>
+							</div>
+						<% end %>
+					<% else %>
+						<h3>You are not following anyone.</h3>
+						<h6>Boss move.</h6>
 					<% end %>
 			</div>
 		</div>
 		<div class="profile_followers">
 			<div class="profile_followers_user">
 					<% @profile_user_followers = Follow.where(followed_id: @profile_user[:id]) %>
-					<% @profile_user_followers.each do |follow| %>
-						<div class="people_user_follows">
-							<i id="follower_bird" class="fa fa-twitter"></i>
-							<a href=<%= "/profile/#{User.where(id: follow[:follower_id]).first.username}" %>>
-								<%= User.where(id: follow[:follower_id]).first.username %>
-							</a>
-						</div>
+					<% if @profile_user_followers != [] %>
+						<% @profile_user_followers.each do |follow| %>
+							<div class="people_user_follows">
+								<i id="follower_bird" class="fa fa-twitter"></i>
+								<a href=<%= "/profile/#{User.where(id: follow[:follower_id]).first.username}" %>>
+									<%= User.where(id: follow[:follower_id]).first.username %>
+								</a>
+							</div>
+						<% end %>
+					<% else %>
+						<h3>You have no flippin' followers.</h3>
 					<% end %>
 			</div>
 		</div>
