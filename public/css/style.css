@@ -38,6 +38,10 @@ body{
     from {transform: rotateX(0deg);}
     to {transform: rotateX(180deg);}
 }
+
+#signuplink{
+	text-decoration: none;
+}
 #index_signup{
 	background: red;
 	color: white;
@@ -45,13 +49,14 @@ body{
 	width: 200px;
 	text-align: center;
 	padding: 10px 0 0 0;
+	margin: 436px auto 0px auto;
 }
 
 #index_signup p{
 	text-decoration: none;
 	display: block;
 	color: white;
-	margin: 20px;
+	margin: 0px;
 }
 
 /*======================*/
