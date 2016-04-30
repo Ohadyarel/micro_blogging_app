@@ -9,8 +9,8 @@ body{
 	position: fixed;
 	display: block;
 	width: 500px;
-	height: 300px;
-	margin:auto;
+	height: 150px;
+	margin:300px auto 0px auto;
 	top: 0;
 	bottom: 0;
 	left: 10px;
@@ -473,6 +473,7 @@ body{
 	padding: 2px;
 }
 
+
 /*profile lists of follows */
 
 .profile_following {
@@ -516,7 +517,98 @@ body{
 	transform: rotateX(180deg);
 }
 
+/*=======================================================*/
 
 
+/*Profile edit styling*/
+#edit_profile{
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+}
 
+#edit_profile h1{
+	color: red;
+}
 
+#edit_profile form{
+	border-radius: 2px;
+	width: 500px;
+	border: 5px solid red;
+	margin: 20px auto;
+}
+
+#edit_profile input:focus {
+	box-shadow: 0 0 5px rgba(255, 0, 0, 1);
+	border: 2px solid red;
+}
+
+#edit_profile input {
+	display: block;
+	width: 400px;
+	height: 20px;
+	margin: 30px auto;
+	font-size: 15px;
+	outline: none;
+}
+
+#delete_modal {
+	display: none;
+	position: fixed;
+	width: 400px;
+	height: 150px;
+	z-index: 500;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 300px auto;
+	background: white;
+	border-radius: 5px;
+	border: 5px red solid;
+	text-align: center;
+}
+
+#delete_modal form input{
+	display: block;
+	width: 200px;
+	height: 60px;
+	margin: 30px auto;
+	font-size: 15px;
+	outline: none;
+	color: white;
+	background: red;
+}
+
+#delete_modal p {
+	color: red;
+	font-size: 30px;
+	margin: 5px auto;
+	margin-bottom: 0; 
+	font-family: 'Lato', sans-serif;
+}
+
+#delete_cancel{
+	float: right;
+	bottom: 300px;
+	position: relative;
+	bottom: 20px;
+	margin-right: 20px; 
+	color: red;
+}
+
+#delete_cancel:hover {
+	color: #fc7b25;
+}
+
+#delete_account_button{
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	background: red;
+	color: white;
+}
+/*==============================*/
