@@ -5,13 +5,20 @@ body{
 }
 
 /*Index styling*/
+#index_page_main_box{
+	width: 700px;
+	height: 200px;
+	margin: 200px auto;
+	margin-bottom: 0px;
+}
 #index_title{
 	font-size: 150px;
-	position: fixed;
+	/*position: relative;*/
+	float:left;
 	display: block;
 	width: 500px;
 	height: 150px;
-	margin:300px auto 0px auto;
+	margin:0;
 	top: 0;
 	bottom: 0;
 	left: 10px;
@@ -20,19 +27,20 @@ body{
 
 #index_image{
 	font-size: 150px;
-	position: fixed;
+	/*position: fixed;*/
+	float: right;
 	display: block;
-	width: 500px;
-	height: 300px;
-	margin:auto;
+	width: 140px;
+	height: 140px;
+	margin: 40px auto;
 	top: 0;
 	bottom: -28px;
 	left: 994px;
 	right: 0;
 	-webkit-animation-name: woot; 
     -webkit-animation-duration: 4s;
-   transform: rotateX(180deg);
-   color: red;
+  transform: rotateX(180deg);
+  color: red;
 }
 
 @-webkit-keyframes woot {
@@ -50,7 +58,7 @@ body{
 	width: 200px;
 	text-align: center;
 	padding: 10px 0 0 0;
-	margin: 436px auto 0px auto;
+	margin: 20px auto 0px auto;
 }
 
 #index_signup p{
