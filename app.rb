@@ -39,15 +39,15 @@ post '/sign-up' do
 				redirect "/feed"
 			else
 				flash[:alert] = "Username already exist. Please choose a different Username."
-				redirect back
+				redirect "/sign_up"
 		  end
 		else
 			flash[:alert] = "Password does not match."
-			redirect back
+			redirect "/sign_up"
 		end
 	else
 		flash[:alert] = "Please read and agree to the terms and conditions."
-		redirect back
+		redirect "/sign_up"
 	end
 end
 
@@ -59,7 +59,7 @@ post '/log-in' do
 		redirect "/profile/#{@user[:username]}"
 	else     
 		flash[:alert] = "Your username or password is incorrect, please try again." 
-		redirect back 
+		redirect '/user_login_page' 
 	end   
 end
 
