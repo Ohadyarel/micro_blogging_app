@@ -8,11 +8,15 @@
     		<input type="submit" value="Flip it" id="post_submit_button">
     </div>
 
-    <h2><i class="fa fa-twitter"></i></h2>
+    <h2><i class="fa fa-twitter" id="feed_bird"></i></h2>
 
     <div id="active_feed">
         <% @posts.reverse.each do |post| %>
             <div class="feed_post">
+                <p class="post_edit">
+                    <a href=<%= "/post_edit/#{post.id}" %>><i class="fa fa-pencil-square-o"></i></a>
+                	<a href=""></a><i class="fa fa-times"></i></a>
+                </p>
                 <% @creator = User.where(id: post[:user_id]).first %>
                 <p class="post_body">
                     <%= post[:body] %>
@@ -21,7 +25,7 @@
                     Posted by: <a href=<%= "/profile/#{@creator[:username]}" %>><%= @creator[:username] %></a>
                 </p>
                 <p class="post_time">
-                	<%= post[:created_at] %> 
+                    <%= post[:created_at] %> 
                 </p>
             </div>
         <% end %>

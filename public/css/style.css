@@ -311,7 +311,7 @@ body{
 	margin: 0;
 }
 
-#feed i {
+#feed #feed_bird {
 	transform: rotateX(180deg);
 }
 
@@ -355,6 +355,13 @@ body{
 	display: inline-block;
 	float: right;
 	font-size: .8em;
+}
+
+.post_edit {
+	float: right;
+	color: red;
+	margin: 0;
+
 }
 
 
