@@ -15,7 +15,7 @@
             <div class="feed_post">
                 <p class="post_edit">
                     <a href=<%= "/post_edit/#{post.id}" %>><i class="fa fa-pencil-square-o"></i></a>
-                	<a href=""></a><i class="fa fa-times"></i></a>
+                	<a href="#"></a><i class="fa fa-times"></i></a>
                 </p>
                 <% @creator = User.where(id: post[:user_id]).first %>
                 <p class="post_body">
