@@ -170,3 +170,23 @@ get '/user_login_page'do
 	erb :login
 end
 #===================================================================
+
+# allowing a user to edit and delete posts
+
+get '/edit_post/:id' do
+	@post = Post.find(params[:id])
+	erb :edit_post
+end
+
+post '/post/edit' do
+	@post = Post.find(params[:post][:id])
+	@post.update(body: params[:post][:body])
+	redirect "/profile/#{current_user.username}"
+end
+
+post '/post/delete' do
+	Post.find(params[:post][:id]).delete
+	redirect "/profile/#{current_user.username}"
+end
+
+

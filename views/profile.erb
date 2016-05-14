@@ -39,7 +39,7 @@
 	<div id="profile_main">
 		<div class="profile_main_nav">
 			<ul>
-				<li class="active_profile_tab" id="nav_posts">Posts</li>
+				<li class="active_profile_tab" id="nav_posts">Teewt</li>
 				<li id="nav_following">Following</li>
 				<li id="nav_followers">Followers</li>
 			</ul>
@@ -47,15 +47,20 @@
 		<div class="profile_posts">
 			<% @profile_user_posts.reverse.each do |post| %>
         <div class="profile_post">
-            <p class="post_body">
-                <%= post[:body] %>
+        	<% if current_user.id == post.user_id %>
+            <p class="post_edit">
+              <a href=<%= "/edit_post/#{post.id}" %>><i class="fa fa-pencil-square-o"></i></a>
             </p>
-            <p class="post_creator">
-                <%= @profile_user[:username] %>
-            </p>
-         		<p class="post_time">
-              <%= post[:created_at] %> 
-            </p>
+          <% end %>
+          <p class="post_body">
+              <%= post[:body] %>
+          </p>
+          <p class="post_creator">
+              <%= @profile_user[:username] %>
+          </p>
+       		<p class="post_time">
+            <%= post[:created_at] %> 
+          </p>
         </div>
     <% end %>
 		</div>

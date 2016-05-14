@@ -1,0 +1,13 @@
+<div class="edit_post">
+  <h1>Edit Teewt</h1>
+  <form method="POST" action="/post/edit">
+      <textarea type="text" name="[post]body" maxlength="150"><%= @post.body %></textarea>
+      <input type="hidden" value=<%= @post.id %> name="[post]id">
+      <span id="chars">150</span>
+      <input type="submit" value="Update" id="post_submit_button">
+  </form>
+  <form method="POST" action="/post/delete">
+	  <input type="hidden" value=<%= @post.id %> name="[post]id">
+  	<input type="submit" value="Delete" class="xbutton">
+	</form>
+</div>
